@@ -20,6 +20,7 @@ public class Frontpagelogin {
 	        driver.findElement(By.id("in.crowdware.one.debug:id/edit_text_phone_number")).sendKeys("8892541090");
 	        driver.findElement(By.id("in.crowdware.one.debug:id/fab")).click();
 	        AndroidElement notification = driver.findElementByXPath("//android.widget.TextView[contains(@text, 'OTP for FrontPage')]");
+		 
 	        // Extract OTP from notification text
 	        String notificationText = notification.getText();
 	        String otp = extractOtpFromText(notificationText);
@@ -39,8 +40,7 @@ public class Frontpagelogin {
 	    }
 
 	    private static String extractOtpFromText(String text) {
-	        // TODO: Implement OTP extraction logic here
-	        // Example: Extract 6-digit OTP from text
+	        //OTP Extraction Logic
 	        String otp = null;
 	        if (text != null) {
 	            String[] words = text.split(" ");
